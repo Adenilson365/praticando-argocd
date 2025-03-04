@@ -42,6 +42,7 @@ metadata:
   name: catalogo
   labels:
     istio-metrics: 'true'
+  namespace: default
 spec:
   selector:
     app: catalogo

@@ -45,6 +45,7 @@ metadata:
   labels:
     app: api-images
     istio-metrics: 'true'
+  namespace: default
 spec:
   ports:
   - port: 5001
