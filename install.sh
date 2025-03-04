@@ -19,6 +19,6 @@ helm install prometheus prometheus-community/kube-prometheus-stack --version 67.
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
-helm install argocd argo/argo-cd --version 7.8.7 -n argocd --create-namespace --values ./values/values-ha.yml
+helm install argocd argo/argo-cd --version 7.8.7 -n argocd --create-namespace --values ./argocd/values-ha.yml
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d > argo-pass.pass
