@@ -2,16 +2,19 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: pdb
+  namespace: default
 spec:
   minAvailable: 1
   selector:
     matchLabels:
       pdb: 'true'
+  
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: pdb-zero
+  namespace: default
 spec:
   minAvailable: 0
   selector:

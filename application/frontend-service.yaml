@@ -4,6 +4,7 @@ metadata:
   name: frontend
   labels:
     istio-metrics: "true"
+  namespace: default
 spec:
   selector:
     app: frontend
