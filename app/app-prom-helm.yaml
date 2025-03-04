@@ -14,7 +14,7 @@ spec:
       helm: 
         releaseName: prometheus
         valueFiles:
-          - $values/values/app-prom-helm.yaml
+          - $values/values/values.yaml
     - repoURL: 'https://github.com/Adenilson365/praticando-argocd.git'
       targetRevision: HEAD
       ref: values
