@@ -3,14 +3,24 @@ kind: Application
 metadata:
   name: app-web
   namespace: argocd
+  labels:
+    curso: Devops-Pro
 spec:
   project: default
   source:
     repoURL: 'https://github.com/Adenilson365/praticando-argocd.git'
     targetRevision: HEAD
     path: app 
+    directory:
+      recurse: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: web
+  info:
+    - name: "Projeto"
+      value: "Estudos de ArgoCD"
+    - name: "Descrição"
+      value: "Aplicação Web"
+
 
     
