@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/Adenilson365/praticando-argocd.git'
     targetRevision: HEAD
-    path: app 
+    path: caos 
     directory:
       recurse: true
   syncPolicy:
@@ -19,7 +19,7 @@ spec:
       selfHeal: true
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: webpage
+    namespace: caos
   info:
     - name: "Projeto"
       value: "Estudos de ArgoCD"
