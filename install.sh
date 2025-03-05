@@ -13,9 +13,9 @@ kubectl create clusterrolebinding cluster-admin-binding \
 
 
 #Intalação do prom-grafana para avaliar consumo de recursos do argo
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-helm install prometheus prometheus-community/kube-prometheus-stack --version 67.5.0 --namespace obs --create-namespace
+# helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# helm repo update
+# helm install prometheus prometheus-community/kube-prometheus-stack --version 67.5.0 --namespace obs --create-namespace
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
