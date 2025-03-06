@@ -17,4 +17,24 @@ spec:
               curl -X POST -H 'Content-type: application/json' --data '{"text":"Pre-sync hook"}' \
               https://webhook.site/0c480a67-d85f-4011-9446-be4b670ab623
       restartPolicy: Never
-
+--- 
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: post-sync-
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: post-sync
+          image: curlimages/curl
+          command:
+            - /bin/sh
+            - -c
+            - |
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"Post-sync hook"}' \
+              https://webhook.site
+      restartPolicy: Never
+      
