@@ -35,6 +35,25 @@ spec:
             - -c
             - |
               curl -X POST -H 'Content-type: application/json' --data '{"text":"Post-sync hook"}' \
-              https://webhook.site
+              https://webhook.site/0c480a67-d85f-4011-9446-be4b670ab623
       restartPolicy: Never
-      
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: sync-fail-
+  annotations:
+    argocd.argoproj.io/hook: SyncFail
+spec: 
+  template:
+    spec:
+      containers:
+        - name: sync-fail
+          image: curlimages/curl
+          command:
+            - /bin/sh
+            - -c
+            - |
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"Sync-fail hook"}' \
+              https://webhook.site/0c480a67-d85f-4011-9446-be4b670ab623
+      restartPolicy: Never
