@@ -4,6 +4,7 @@ metadata:
   generateName: pre-sync-
   annotations:
     argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
@@ -24,6 +25,7 @@ metadata:
   generateName: post-sync-
   annotations:
     argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
@@ -44,6 +46,7 @@ metadata:
   generateName: sync-fail-
   annotations:
     argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec: 
   template:
     spec:
