@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mongodb
   annotations:
-    argocd.argoproj.io/sync-wave: 0
+    argocd.argoproj.io/sync-wave: '0'
   namespace: wave
 spec:
   selector:
@@ -30,7 +30,7 @@ kind: Service
 metadata:
   name: mongodb-service
   annotations:
-    argocd.argoproj.io/sync-wave: 0
+    argocd.argoproj.io/sync-wave: '0'
   namespace: wave
 spec:
   selector:
@@ -45,7 +45,7 @@ kind: Deployment
 metadata:
   name: movies
   annotations:
-    argocd.argoproj.io/sync-wave: 1
+    argocd.argoproj.io/sync-wave: '1'
   namespace: wave
 spec:
   selector:
@@ -78,7 +78,7 @@ kind: Service
 metadata:
   name: movies
   annotations:
-    argocd.argoproj.io/sync-wave: 1
+    argocd.argoproj.io/sync-wave: '1'
   namespace: wave
 spec:
   selector:
