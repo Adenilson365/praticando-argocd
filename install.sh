@@ -1,11 +1,11 @@
 #!/bin/bash
 
-gcloud container clusters get-credentials devops-labs01 \
-    --region=us-east1
+# gcloud container clusters get-credentials devops-labs01 \
+#     --region=us-east1
 
-kubectl create clusterrolebinding cluster-admin-binding \
-  --clusterrole cluster-admin \
-  --user $(gcloud config get-value account)
+# kubectl create clusterrolebinding cluster-admin-binding \
+#   --clusterrole cluster-admin \
+#   --user $(gcloud config get-value account)
 
 # kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.0-beta.0/deploy/static/provider/cloud/deploy.yaml
 
@@ -19,6 +19,6 @@ kubectl create clusterrolebinding cluster-admin-binding \
 
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
-helm install argocd argo/argo-cd --version 7.8.7 -n argocd --create-namespace --values ./argocd/values-ha.yml
+helm install argocd argo/argo-cd --version 7.8.7 -n argocd --create-namespace --values ./argocd/values-without-ha.yml --wait
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d > argo-pass.pass

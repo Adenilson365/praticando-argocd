@@ -17,14 +17,21 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      name: web
+      jsonPointers:
+        - /spec/replicas
+    - group: autoscaling
+      kind: HorizontalPodAutoscaler
+      name: web
+      jsonPointers:
+        - status/currentReplicas
+        - status/desiredReplicas
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: caos
-  info:
-    - name: "Projeto"
-      value: "Estudos de ArgoCD"
-    - name: "Descrição"
-      value: "Aplicação Web"
 
 
     
