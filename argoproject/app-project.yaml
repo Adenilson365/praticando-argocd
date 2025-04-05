@@ -24,6 +24,13 @@ spec:
     #   kind: HorizontalPodAutoscaler
     # - group: 'v1'
     #   kind: Service
+  roles: 
+    - name: pipeline
+      policies:
+        - p, proj:argo-project:pipeline, applications, get, *, allow
+        - p, proj:argo-project:pipeline, applications, list, *, allow
+      groups:
+        - adenilson
   syncWindows:
     - kind: Allow
       timeZone: America/Sao_Paulo

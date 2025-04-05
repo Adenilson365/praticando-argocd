@@ -40,13 +40,3 @@ spec:
               port:
                 number: 5001
 
----
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
-metadata:
-  name: managed-cert
-  namespace: default
-spec:
-  domains:
-    - api.konzelmann.com.br
-    - obs.konzelmann.com.br
