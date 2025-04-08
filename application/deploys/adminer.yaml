@@ -5,7 +5,7 @@ metadata:
   labels:
     pdb: 'zero'
     istio-metrics: 'true'
-  namespace: default
+  namespace: api
 spec:
   selector:
     matchLabels:
@@ -36,7 +36,7 @@ metadata:
   name: adminer
   labels:
     istio-metrics: 'true'
-  namespace: default
+  namespace: api
 spec:
   selector:
     app: adminer

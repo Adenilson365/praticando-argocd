@@ -5,7 +5,7 @@ metadata:
   labels:
     app: catalogo 
     pdb: 'true'
-  namespace: default
+  namespace: api
 spec:
   replicas: 3
   selector:
@@ -42,7 +42,7 @@ metadata:
   name: catalogo
   labels:
     istio-metrics: 'true'
-  namespace: default
+  namespace: api
 spec:
   selector:
     app: catalogo

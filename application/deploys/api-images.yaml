@@ -7,7 +7,7 @@ metadata:
     pdb: 'true'
     istio-metrics: 'true'
     block-especific: 'true'
-  namespace: default
+  namespace: api
 spec:
   replicas: 1
   selector:
@@ -45,7 +45,7 @@ metadata:
   labels:
     app: api-images
     istio-metrics: 'true'
-  namespace: default
+  namespace: api
 spec:
   ports:
   - port: 5001
